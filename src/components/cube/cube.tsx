@@ -1,8 +1,14 @@
-import { useFrame } from '@react-three/fiber'
+import { useFrame, Vector3 } from '@react-three/fiber'
 import { FC, useRef } from 'react'
 import type { Mesh } from 'three'
 
-const Cube: FC = () => {
+type Props = {
+  position: Vector3
+  size: Vector3
+  color: string
+}
+
+const Cube: FC<Props> = ({ position, size, color }) => {
   const cubeRef = useRef<Mesh>(null)
   useFrame(() => {
     const cube = cubeRef.current
@@ -12,9 +18,9 @@ const Cube: FC = () => {
   })
 
   return (
-    <mesh ref={cubeRef}>
-      <boxBufferGeometry args={[1, 1, 1]} />
-      <meshLambertMaterial color="aqua" />
+    <mesh ref={cubeRef} position={position}>
+      <boxBufferGeometry args={size} />
+      <meshLambertMaterial color={color} />
     </mesh>
   )
 }
