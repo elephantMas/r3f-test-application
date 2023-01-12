@@ -6,7 +6,7 @@ const Home: NextPage = () => {
   const router = useRouter()
   useEffect(() => {
     console.log('useEffect')
-    router.push('/top')
+    router.push('/displayCube')
   }, [router])
 
   return null

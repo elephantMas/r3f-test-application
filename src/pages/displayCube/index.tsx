@@ -6,7 +6,7 @@ import Cube from '@/components/cube/cube'
 
 const DisplayCube: NextPage = () => {
   return (
-    <div className="bg-white">
+    <div className="bg-white h-screen wfull">
       <Canvas
         camera={{
           fov: 45,
