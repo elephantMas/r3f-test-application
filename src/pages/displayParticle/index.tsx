@@ -2,11 +2,11 @@ import { OrbitControls } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
 import { NextPage } from 'next'
 
-import Cube from '@/components/cube/cube'
+import Particle from '@/components/particle/particle'
 
 const DisplayCube: NextPage = () => {
   return (
-    <div className="bg-white h-screen wfull">
+    <div className="w-full h-screen bg-gradient-to-br from-[#767995] to-[#050725]">
       <Canvas
         camera={{
           fov: 45,
@@ -17,7 +17,7 @@ const DisplayCube: NextPage = () => {
       >
         <directionalLight position={[1, 1, 1]} intensity={0.8} />
         <ambientLight args={[0xffffff]} intensity={0.2} />
-        <Cube />
+        <Particle />
         <OrbitControls />
       </Canvas>
     </div>
